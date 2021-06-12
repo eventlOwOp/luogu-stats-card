@@ -14,9 +14,9 @@ const {
 async function fetchStats(id) {
   //debug 测试请求
   let headers = { Cookie: `__client_id=4e2f60a196a6e42510a49cbd237fadd9532da4da;_uid=237496` };
-  const res = await axios.get(`https://a-1c37c2-1300876583.ap-shanghai.service.tcloudbase.com/luogu?id=${id}`, { headers });
+  // const res = await axios.get(`https://a-1c37c2-1300876583.ap-shanghai.service.tcloudbase.com/luogu?id=${id}`);
 
-  //const res = await axios.get(`https://www.luogu.com.cn/user/${id}?_contentOnly`)
+  const res = await axios.get(`https://www.luogu.com.cn/user/${id}?_contentOnly`, { headers });
 
   const stats = {
     name: "NULL",
