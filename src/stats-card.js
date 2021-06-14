@@ -84,7 +84,7 @@ const renderSVG = (stats, options) => {
   const passedSum = passed.reduce((a, b) => a + b);
   const body = renderChart(datas, labelWidth, progressWidth, "题");
 
-  const title = renderNameTitle(name, color, ccfLevel, "的练习情况", cardWidth, `已通过: ${passedSum}题`);
+  const title = renderNameTitle(name, color, ccfLevel, "的贺题情况", cardWidth, `已通过: ${passedSum}题`);
 
   return new Card({
     width: cardWidth - 2*paddingX,
