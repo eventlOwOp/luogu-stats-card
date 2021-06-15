@@ -86,7 +86,7 @@ const renderSVG = (stats, options) => {
 		ccfLevel,
 		"的贺题情况",
 		cardWidth,
-		`已贺: ${passedSum}题`
+		`已贺${passedSum}题, 被${ranking - 1}人吊打`
 	);
 
 	return new Card({
