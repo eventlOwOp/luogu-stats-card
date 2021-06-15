@@ -50,11 +50,13 @@ async function fetchStats(id) {
 
 	stats.passed[8] = res.data.currentData.submittedProblems.length;
 
+	stats.ranking = res.data.currentData.user.ranking;
+
 	return stats;
 }
 
 const renderSVG = (stats, options) => {
-	const { name, color, ccfLevel, passed, hideInfo } = stats;
+	const { name, color, ccfLevel, passed, hideInfo, ranking } = stats;
 
 	const { hideTitle, darkMode, cardWidth = 500 } = options || {};
 
@@ -86,7 +88,7 @@ const renderSVG = (stats, options) => {
 		ccfLevel,
 		"的贺题情况",
 		cardWidth,
-		`已贺${passedSum}题, 被${ranking - 1}人吊打`
+		`已贺${passedSum}题, 被${ranking ? ranking - 1 : "INF"}人吊打`
 	);
 
 	return new Card({
