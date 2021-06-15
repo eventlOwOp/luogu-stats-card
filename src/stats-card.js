@@ -48,7 +48,7 @@ async function fetchStats(id) {
 		stats.passed[i.difficulty]++;
 	}
 
-	stats[8] = res.data.currentData.submittedProblems.length;
+	stats.passed[8] = res.data.currentData.submittedProblems.length;
 
 	return stats;
 }
