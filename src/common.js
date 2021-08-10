@@ -100,7 +100,7 @@ class Card {
 			this.hideTitle ? this.paddingY : this.paddingY + this.titleHeight
 		})">
           ${this.body}
-	<text xmlns="http://www.w3.org/2000/svg" x="0" y="295" class="text gray">更新于 ${dateFormat("YYYY-mm-dd HH:MM:SS", new Date())}</text>
+	<text xmlns="http://www.w3.org/2000/svg" x="0" y="295" class="text gray">更新于 ${dateFormat("YYYY-mm-dd HH:MM:SS", new Date(new Date().getTime() + 8 * 3600 * 1000))}</text>
         </g>
       </svg>`;
 	}
