@@ -63,6 +63,7 @@ class Card {
 						this.darkMode ? "#666666" : "#dddddd"
 					}; stroke-width:1 }
           ${this.css}
+	  text.gray { fill: #aaa; }
         </style>
         <rect x="0.5" y="0.5" rx="4.5" height="99%" stroke="${borderColor}" width="99%" fill="${bgColor}" stroke-opacity="1" />
         
@@ -79,6 +80,7 @@ class Card {
 			this.hideTitle ? this.paddingY : this.paddingY + this.titleHeight
 		})">
           ${this.body}
+	<text xmlns="http://www.w3.org/2000/svg" x="0" y="295" class="text gray">更新于 ${new Date().toString()}</text>
         </g>
       </svg>`;
 	}
