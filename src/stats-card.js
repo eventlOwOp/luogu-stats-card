@@ -97,7 +97,7 @@ const renderSVG = (stats, options) => {
 		darkMode,
 		title,
 		body,
-		wi,
+		score,
 	}).render();
 };
 
