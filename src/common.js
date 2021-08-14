@@ -43,6 +43,7 @@ class Card {
 		paddingX = 25,
 		paddingY = 35,
 		hideBorder = false,
+		score = 0,
 	}) {
 		this.width = width;
 		this.height = height;
@@ -55,6 +56,7 @@ class Card {
 		this.paddingX = paddingX;
 		this.paddingY = paddingY;
 		this.hideBorder = hideBorder;
+		this.score = score;
 	}
 
 	render() {
@@ -100,7 +102,8 @@ class Card {
 			this.hideTitle ? this.paddingY : this.paddingY + this.titleHeight
 		})">
           ${this.body}
-	<text xmlns="http://www.w3.org/2000/svg" x="0" y="295" class="text gray">更新于 ${dateFormat("YYYY-mm-dd HH:MM:SS", new Date(new Date().getTime() + 8 * 3600 * 1000))} UTC+8:00</text>
+	      <text xmlns="http://www.w3.org/2000/svg" x="0" y="295" class="text gray">更新于 ${dateFormat("YYYY-mm-dd HH:MM:SS", new Date(new Date().getTime() + 8 * 3600 * 1000))} UTC+8:00</text>
+		  <text xmlns="http://www.w3.org/2000/svg" x="350" y="295" class="text gray">贺题分 ${this.score}</text>
         </g>
       </svg>`;
 	}

@@ -12,9 +12,7 @@ const {
  * @returns {Object} 获取的用户数据 {name, color, ccfLevel, passed, hideInfo}
  */
 async function fetchStats(id) {
-	const res = await axios.get(
-		`https://www.luogu.com.cn/user/${id}?_contentOnly`
-	);
+	const res = await axios.get(`https://www.luogu.com.cn/user/${id}?_contentOnly`);
 
 	const stats = {
 		name: "NULL",
@@ -63,6 +61,11 @@ const renderSVG = (stats, options) => {
 	const labelWidth = 90; //柱状图头部文字长度
 	const progressWidth = cardWidth - 2 * paddingX - labelWidth - 60; //500 - 25*2(padding) - 90(头部文字长度) - 60(预留尾部文字长度)，暂时固定，后序提供自定义选项;
 
+	const weights = [60, 1, 3, 5, 10, 20, 40, 80, 0];
+	let wi = 0;
+
+	for (let i = 0; i < 8; ++i) wi += weights[i] * parseInt(passed[i]);
+
 	const datas = [
 		{ label: "未评定", color: "#bfbfbf", data: passed[0] },
 		{ label: "入门", color: "#fe4c61", data: passed[1] },
@@ -93,6 +96,7 @@ const renderSVG = (stats, options) => {
 		darkMode,
 		title,
 		body,
+		wi,
 	}).render();
 };
 
