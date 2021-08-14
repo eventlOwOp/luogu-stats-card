@@ -62,7 +62,7 @@ const renderSVG = (stats, options) => {
 	const labelWidth = 90; //柱状图头部文字长度
 	const progressWidth = cardWidth - 2 * paddingX - labelWidth - 60; //500 - 25*2(padding) - 90(头部文字长度) - 60(预留尾部文字长度)，暂时固定，后序提供自定义选项;
 
-	const weights = [60, 1, 3, 5, 10, 20, 40, 80, 0];
+	const weights = [60, 1, 2, 3, 10, 20, 40, 80, 0];
 	let score = 0;
 
 	for (let i = 0; i < 8; ++i) score += weights[i] * passed[i];
