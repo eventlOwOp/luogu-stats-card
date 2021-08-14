@@ -20,6 +20,7 @@ async function fetchStats(id) {
 		ccfLevel: 0,
 		passed: [0, 0, 0, 0, 0, 0, 0, 0, 0],
 		hideInfo: false,
+		ranking: 0,
 	};
 	if (res.data.code !== 200) {
 		return stats;
@@ -62,9 +63,9 @@ const renderSVG = (stats, options) => {
 	const progressWidth = cardWidth - 2 * paddingX - labelWidth - 60; //500 - 25*2(padding) - 90(头部文字长度) - 60(预留尾部文字长度)，暂时固定，后序提供自定义选项;
 
 	const weights = [60, 1, 3, 5, 10, 20, 40, 80, 0];
-	let wi = 0;
+	let score = 0;
 
-	for (let i = 0; i < 8; ++i) wi += weights[i] * parseInt(passed[i]);
+	for (let i = 0; i < 8; ++i) score += weights[i] * passed[i];
 
 	const datas = [
 		{ label: "未评定", color: "#bfbfbf", data: passed[0] },
