@@ -1,11 +1,32 @@
 {
   "builds": [
-    { "src": "api/*.js", "use": "@vercel/node" }
+    {
+      "src": "api/*.js",
+      "use": "@vercel/node"
+    }
   ],
   "routes": [
-    { "src": "/practice", "dest": "/api/index.js" },
-    { "src": "/guzhi", "dest": "/api/guzhi.js" },
-    { "src": "/", "status": 301, "headers": { "Location": "https://github.com/bossbaby2005/luogu-stats-card" } }
+    {
+      "src": "/practice",
+      "dest": "/api/index.js"
+    },
+    {
+      "src": "/guzhi",
+      "dest": "/api/guzhi.js"
+    },
+    {
+      "src": "/shield",
+      "dest": "/api/shield.js"
+    },
+    {
+      "src": "/",
+      "status": 301,
+      "headers": {
+        "Location": "https://github.com/bossbaby2005/luogu-stats-card"
+      }
+    }
   ],
-  "regions": ["hkg1"]
+  "regions": [
+    "hkg1"
+  ]
 }
