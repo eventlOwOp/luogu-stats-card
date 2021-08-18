@@ -43,7 +43,7 @@ const renderSVG = (stats, options) => {
 		{ label: "写挂了", color: "#996600", data: passed[8] },
 	];
 
-    const nameLength = anf(name) * 0.11;
+    let nameLength = anf(name) * 0.11;
 
     let ccf = "";
 
