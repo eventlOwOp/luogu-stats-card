@@ -12,7 +12,8 @@ const {
  * @returns {Object} 获取的用户数据 {name, color, ccfLevel, passed, hideInfo}
  */
 async function fetchStats(id) {
-	const res = await axios.get(`https://www.luogu.com.cn/user/${id}?_contentOnly`);
+	let headers = { Cookie: `__client_id=${process.env.cid};_uid=${process.env.uid}` };
+	const res = await axios.get(`https://www.luogu.com.cn/user/${id}?_contentOnly`, { headers });
 
 	const stats = {
 		name: "NULL",
