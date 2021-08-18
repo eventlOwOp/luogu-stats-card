@@ -39,18 +39,18 @@ const renderSVG = (stats, options) => {
     }
     for (let i = 0; i < 8; ++i) {
         const nameL = anf(passed[i].toString()) * 0.11;
-        p2 += `<text x="${s2 + 3}" y="14" fill="#fff" textLength="${nameL}">${passed[i]}</text>`;
+        p2 += `<text x="${s2}" y="14" fill="#fff" textLength="${nameL}">${passed[i]}</text>`;
         s2 += nameL + 6;
     }
 
     return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96" height="20" role="img">
       <title>${name}</title>
       <g>
-        <rect width="${nameLength + 6}" height="19" fill="${NAMECOLOR[color]}"/>
+        <rect width="${nameLength + 6}" height="19" fill="#fff"/>
         ${p1}
       </g>
       <g fill="#fff" font-family="Verdana, Microsoft Yahei" text-rendering="geometricPrecision" font-size="11">
-        <text x="3" y="14" fill="#fff" textLength="${nameLength}">${name}</text>
+        <text x="3" y="14" fill="${NAMECOLOR[color]}" textLength="${nameLength}">${name}</text>
         ${p2}
       </g>
     </svg>`
