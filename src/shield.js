@@ -43,7 +43,7 @@ const renderSVG = (stats, options) => {
         s2 += nameL + 6;
     }
 
-    return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="s2" height="19" role="img">
+    return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${s2}" height="19" role="img">
       <title>${name}</title>
       <g>
         <rect width="${nameLength + 6}" height="19" fill="#fff"/>
