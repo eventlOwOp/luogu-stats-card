@@ -33,13 +33,13 @@ const renderSVG = (stats, options) => {
     let p1 = "", p2 = "", s1 = nameLength + 6, s2 = nameLength + 9;
 
     for (let i = 0; i < 8; ++i) {
-        const nameL = anf(passed[i]) * 0.11;
+        const nameL = anf(passed[i].toString()) * 0.11;
         p1 += `<rect x="${s1}" width="${nameL + 6}" height="19" fill="${datas[i].color}"/>`;
         s1 += nameL + 6;
     }
     for (let i = 0; i < 8; ++i) {
-        const nameL = anf(passed[i]) * 0.11;
-        p2 += `<text x="${s2 + 3}" y="14" fill="#fff" textLength="${nameL}">${name}</text>`;
+        const nameL = anf(passed[i].toString()) * 0.11;
+        p2 += `<text x="${s2 + 3}" y="14" fill="#fff" textLength="${nameL}">${passed[i]}</text>`;
         s2 += nameL + 6;
     }
 
