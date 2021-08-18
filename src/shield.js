@@ -1,4 +1,5 @@
 const anf = require('anafanafo');
+const { renderError } = require("../src/common.js");
 const NAMECOLOR = {
 	Gray: "#bbbbbb",
 	Blue: "#0e90d2",
@@ -15,10 +16,6 @@ const renderSVG = (stats, options) => {
 		return renderError("用户开启了“完全隐私保护”，获取数据失败");
 	}
 
-	const paddingX = 25;
-	const labelWidth = 90; //柱状图头部文字长度
-	const progressWidth = cardWidth - 2 * paddingX - labelWidth - 60; //500 - 25*2(padding) - 90(头部文字长度) - 60(预留尾部文字长度)，暂时固定，后序提供自定义选项;
-
 	const datas = [
 		{ label: "未评定", color: "#bfbfbf", data: passed[0] },
 		{ label: "入门", color: "#fe4c61", data: passed[1] },
@@ -30,8 +27,6 @@ const renderSVG = (stats, options) => {
 		{ label: "NOI/NOI+/CTSC", color: "#0e1d69", data: passed[7] },
 		{ label: "写挂了", color: "#996600", data: passed[8] },
 	];
-	const passedSum = passed.reduce((a, b) => a + b) - passed[8];
-	const body = renderChart(datas, labelWidth, progressWidth, "题");
 
     const nameLength = anf(name) * 0.11;
 
