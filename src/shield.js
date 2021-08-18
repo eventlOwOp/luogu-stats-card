@@ -43,7 +43,7 @@ const renderSVG = (stats, options) => {
 		{ label: "写挂了", color: "#996600", data: passed[8] },
 	];
 
-    let nameLength = anf(name) * 0.11;
+    let nameLength = anf(name) * 0.11, onameLength = nameLength;
 
     let ccf = "";
 
@@ -69,7 +69,7 @@ const renderSVG = (stats, options) => {
         ${p1}
       </g>
       <g fill="#fff" font-family="Verdana, Microsoft Yahei" text-rendering="geometricPrecision" font-size="11">
-        <text x="3" y="14" fill="${NAMECOLOR[color]}" textLength="${nameLength}">${name}</text>
+        <text x="3" y="14" fill="${NAMECOLOR[color]}" textLength="${onameLength}">${name}</text>
         ${ccf}
         ${p2}
       </g>
