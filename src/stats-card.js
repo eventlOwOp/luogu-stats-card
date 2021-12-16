@@ -13,6 +13,7 @@ const {
  */
 async function fetchStats(id) {
 	let headers = { Cookie: `__client_id=${process.env.cid};_uid=${process.env.uid}` };
+	console.log(headers);
 	const res = await axios.get(`https://www.luogu.com.cn/user/${id}?_contentOnly`, { headers });
 
 	const stats = {
