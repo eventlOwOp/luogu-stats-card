@@ -47,6 +47,8 @@ async function fetchStats(id) {
 	stats.passed[8] = res.data.currentData.submittedProblems.length;
 
 	stats.ranking = res.data.currentData.user.ranking;
+	
+	stats.uid = id;
 
 	return stats;
 }
