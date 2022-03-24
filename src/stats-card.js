@@ -57,10 +57,6 @@ const renderSVG = (stats, options) => {
 	const { name, color, ccfLevel, passed, hideInfo, ranking, uid } = stats;
 
 	const { hideTitle, darkMode, cardWidth = 500 } = options || {};
-	
-	if (uid === 152234) {
-		return renderError("全谷都在模仿我太可恶了");	
-	}
 
 	if (hideInfo) {
 		return renderError("用户开启了“完全隐私保护”，获取数据失败");
