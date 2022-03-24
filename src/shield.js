@@ -27,7 +27,7 @@ const renderCCFBadge = (level, x) => {
 const renderSVG = (stats, options) => {
 	const { name, color, ccfLevel, passed, hideInfo, ranking, uid } = stats;
 	
-	if (uid === 152234) {
+	if (uid == 152234) {
 		return renderError("全谷都在模仿我太可恶了");	
 	}
 	
